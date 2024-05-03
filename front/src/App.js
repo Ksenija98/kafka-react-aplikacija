@@ -27,7 +27,7 @@ const App = () => {
     if (data.length > 0) {
       const chartLabels = data.map((_, index) => (index + 1).toString()); // Indeks + 1 kao labela
 
-      const chartTemperatureData = data.map((entry) => entry.average_temperature + Math.random()*5);
+      const chartTemperatureData = data.map((entry) => entry.srednja_temperatura + Math.random()*5);
 
       setChartData({
         labels: chartLabels,
