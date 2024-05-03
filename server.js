@@ -35,8 +35,8 @@ app.post('/api/receive-data', (req, res) => {
         client.send(jsonData);
     });
 
-    // Send a response
-    res.status(200).send('Data received successfully');
+    // Slanje odgovora
+    res.status(200).send('Podaci o srednjoj temperaturi su uspesno primljeni');
 });
 
 // WebSocket handler

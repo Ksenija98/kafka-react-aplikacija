@@ -13,11 +13,11 @@ nodejs_server_url = 'http://localhost:8000/api/receive-data'
 
 for message in consumer:
     # Dekodiranje i ucitavanje JSON podataka iz Kafka poruke
-    average_temperature_data = message.value.decode('utf-8')
-    average_temperature_data_json = json.loads(average_temperature_data)
+    srednja_temperatura = message.value.decode('utf-8')
+    srednja_temperatura_json = json.loads(srednja_temperatura)
     
     # Slanje podataka na Node.js server
-    response = requests.post(nodejs_server_url, json=average_temperature_data_json)
+    response = requests.post(nodejs_server_url, json=srednja_temperatura_json)
     
     # Ispisivanje odgovora od Node.js servera
     print(f"Odgovor od Node.js servera: {response.text}")
